@@ -21,9 +21,8 @@ class GildedRose(object):
                 item.sell_in -= 1
             if item.sell_in < 0:
                 if item.name != "Aged Brie":
-                    if item.name != "Backstage passes to a TAFKAL80ETC concert":
-                        if item.quality > 0 and item.name != "Sulfuras, Hand of Ragnaros":
-                            item.quality -= 1
+                    if item.name != "Backstage passes to a TAFKAL80ETC concert" and item.name != "Sulfuras, Hand of Ragnaros" and item.quality > 0:
+                        item.quality -= 1
                     if item.name == "Backstage passes to a TAFKAL80ETC concert":
                         item.quality = 0
                 if item.name == "Aged Brie":
