@@ -10,7 +10,7 @@ class GildedRose(object):
             if item.name == "Aged Brie":
                 item.quality += \
                     2 if item.quality < 49 and item.sell_in < 1 else \
-                    1 if item.quality <= 49 else \
+                    1 if item.quality < 50 else \
                     0
                 item.sell_in -= 1
 
