@@ -18,23 +18,19 @@ class GildedRose(object):
 
                 if item.quality == 49:
                     item.quality += 1
-                    if item.sell_in < 11 and item.quality < 50:
-                        item.quality += 1
-                    if item.sell_in < 6 and item.quality < 50:
-                        item.quality += 1
 
                 elif item.quality == 48:
                     item.quality += 1
-                    if item.sell_in < 11 and item.quality < 50:
+                    if item.sell_in < 11:
                         item.quality += 1
                     if item.sell_in < 6 and item.quality < 50:
                         item.quality += 1
 
                 elif item.quality < 48:
                     item.quality += 1
-                    if item.sell_in < 11 and item.quality < 50:
+                    if item.sell_in < 11:
                         item.quality += 1
-                    if item.sell_in < 6 and item.quality < 50:
+                    if item.sell_in < 6:
                         item.quality += 1
 
                 if item.sell_in < 1:
