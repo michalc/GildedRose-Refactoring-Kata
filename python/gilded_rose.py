@@ -30,7 +30,7 @@ class GildedRose(object):
                             item.quality -= 1
                     else:
                         item.quality = 0
-                else:
+                if item.name == "Aged Brie":
                     if item.quality < 50:
                         item.quality += 1
 
