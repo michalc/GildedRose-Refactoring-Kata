@@ -17,7 +17,10 @@ class GildedRose(object):
             elif item.name == "Backstage passes to a TAFKAL80ETC concert":
                 original_quality = item.quality
 
-                if original_quality == 49:
+                if item.sell_in < 1:
+                    item.quality = 0
+
+                elif original_quality == 49:
                     item.quality = original_quality + 1
 
                 elif original_quality == 48:
@@ -36,8 +39,6 @@ class GildedRose(object):
                     else:
                         item.quality = original_quality + 1
 
-                if item.sell_in < 1:
-                    item.quality = 0
                 item.sell_in -= 1
 
             elif item.name == "Sulfuras, Hand of Ragnaros":
