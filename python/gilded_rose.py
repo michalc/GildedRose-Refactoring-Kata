@@ -29,13 +29,10 @@ class GildedRose(object):
                 pass
 
             else:
-                original_quality = item.quality
-                if original_quality > 1:
-                    item.quality = original_quality - 1
-                    if item.sell_in < 1:
-                        item.quality = original_quality - 2
-                elif original_quality == 1:
-                    item.quality = original_quality - 1
+                item.quality += \
+                    -2 if item.quality > 1 and item.sell_in < 1 else \
+                    -1 if item.quality > 0 else \
+                    0
                 item.sell_in -= 1
 
 class Item:
