@@ -17,10 +17,9 @@ class GildedRose(object):
             elif item.name == "Backstage passes to a TAFKAL80ETC concert":
                 item.quality = \
                     0 if item.sell_in < 1 else \
-                    item.quality + 1 if item.quality == 49 else \
                     item.quality + 3 if item.quality < 49 and item.sell_in < 6 else \
                     item.quality + 2 if item.quality < 49 and item.sell_in < 11 else \
-                    item.quality + 1 if item.quality < 49 else \
+                    item.quality + 1 if item.quality < 50 else \
                     item.quality 
                 item.sell_in -= 1
 
