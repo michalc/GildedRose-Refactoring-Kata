@@ -9,14 +9,13 @@ class GildedRose(object):
         for item in self.items:
             if item.name not in ("Aged Brie", "Backstage passes to a TAFKAL80ETC concert", "Sulfuras, Hand of Ragnaros") and item.quality > 0:
                 item.quality -= 1
-            if item.name == "Aged Brie" or item.name == "Backstage passes to a TAFKAL80ETC concert":
-                if item.quality < 50:
-                    item.quality += 1
-                    if item.name == "Backstage passes to a TAFKAL80ETC concert":
-                        if item.sell_in < 11 and item.quality < 50:
-                            item.quality += 1
-                        if item.sell_in < 6 and item.quality < 50:
-                            item.quality += 1
+            if (item.name == "Aged Brie" or item.name == "Backstage passes to a TAFKAL80ETC concert") and item.quality < 50:
+                item.quality += 1
+                if item.name == "Backstage passes to a TAFKAL80ETC concert":
+                    if item.sell_in < 11 and item.quality < 50:
+                        item.quality += 1
+                    if item.sell_in < 6 and item.quality < 50:
+                        item.quality += 1
             if item.name != "Sulfuras, Hand of Ragnaros":
                 item.sell_in -= 1
             if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert" and item.name != "Sulfuras, Hand of Ragnaros" and item.quality > 0 and item.sell_in < 0:
