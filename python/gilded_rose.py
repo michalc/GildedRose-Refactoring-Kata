@@ -15,21 +15,22 @@ class GildedRose(object):
                 item.sell_in -= 1
 
             elif item.name == "Backstage passes to a TAFKAL80ETC concert":
+                original_quality = item.quality
 
-                if item.quality == 49:
-                    item.quality += 1
+                if original_quality == 49:
+                    item.quality = original_quality + 1
 
-                elif item.quality == 48:
-                    item.quality += 1
+                elif original_quality == 48:
+                    item.quality = original_quality + 1
                     if item.sell_in < 11:
-                        item.quality += 1
+                        item.quality = original_quality + 2
                     if item.sell_in < 6 and item.quality < 50:
                         item.quality += 1
 
-                elif item.quality < 48:
-                    item.quality += 1
+                elif original_quality < 48:
+                    item.quality = original_quality + 1
                     if item.sell_in < 11:
-                        item.quality += 1
+                        item.quality = original_quality + 2
                     if item.sell_in < 6:
                         item.quality += 1
 
