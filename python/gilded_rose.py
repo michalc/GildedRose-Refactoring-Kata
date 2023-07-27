@@ -22,7 +22,7 @@ class GildedRose(object):
                     item.quality = item.quality + 1
 
                 elif item.quality == 48:
-                    if item.sell_in < 6 and item.quality < 50:
+                    if item.sell_in < 6:
                         item.quality = item.quality + 3
                     elif item.sell_in < 11:
                         item.quality = item.quality + 2
